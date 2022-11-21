@@ -49,6 +49,7 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/lake_manifest.xml
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 1
 BOARD_KERNEL_CMDLINE += androidboot.boot_devices=soc/c0c4000.sdhci
+BOARD_KERNEL_CMDLINE += androidboot.partition_map=mmcblk0p64,odm_a;mmcblk0p65,odm_b
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_KERNEL_CONFIG := lineageos_lake_defconfig
