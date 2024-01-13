@@ -5,7 +5,7 @@
   },
   {
     "repository": "proprietary_vendor_motorola_lake",
-    "target_path": "vendor/motorola/lake"
+    "target_path": "vendor/motorola/lake",
     "remote": "evervolv-gitlab"
   }
 ]
