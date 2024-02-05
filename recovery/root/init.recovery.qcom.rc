@@ -1,0 +1,14 @@
+import /init.recovery.${ro.boot.device}.rc
+
+on fs
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    symlink /dev/block/bootdevice/by-name/oem_b /dev/block/bootdevice/by-name/odm_b
+    symlink /dev/block/bootdevice/by-name/oem_a /dev/block/bootdevice/by-name/odm_a
+    symlink /dev/block/by-name/oem_b /dev/block/by-name/odm_b
+    symlink /dev/block/by-name/oem_a /dev/block/by-name/odm_a
+
+    setprop ro.build.system_root_image true
+
+on init
+    setprop sys.usb.configfs 1

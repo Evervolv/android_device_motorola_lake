@@ -61,5 +61,12 @@ on boot
     chmod 0664 /mnt/vendor/persist/camera/dualcal/dual_cal_data.bin
     chmod 0664 /mnt/vendor/persist/camera/dualcal/module_id.bin
 
+on fs
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/bootdevice/by-name/oem_b /dev/block/bootdevice/by-name/odm_b
+    symlink /dev/block/bootdevice/by-name/oem_a /dev/block/bootdevice/by-name/odm_a
+    symlink /dev/block/by-name/oem_b /dev/block/by-name/odm_b
+    symlink /dev/block/by-name/oem_a /dev/block/by-name/odm_a
+
 on moto-charger
     setprop ro.board.platform sdm660
